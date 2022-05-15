@@ -1,0 +1,38 @@
+[
+  {
+    "_class": "com.example.adobe.entity.aircraft.CommercialAircraft",
+    "aircraft_type": "1",
+    "aircraftName": "BOEING_747",
+    "enginesNumber": 4,
+    "maxSpeed": 350,
+    "totalFlightHours": 24000,
+    "passengerSeats": 350
+  },
+  {
+    "_class": "com.example.adobe.entity.aircraft.CargoAircraft",
+    "aircraft_type": "2",
+    "aircraftName": "BOEING_747",
+    "enginesNumber": 4,
+    "maxSpeed": 300,
+    "maxWeight": 2400,
+    "totalPackageNumber": 200
+  },
+  {
+    "_class": "com.example.adobe.entity.aircraft.CommercialAircraft",
+    "aircraftName": "BOEING_748",
+    "aircraft_type": "1",
+    "enginesNumber": 4,
+    "maxSpeed": 350,
+    "totalFlightHours": 25.200,
+    "passengerSeats": 350
+  },
+  {
+    "_class": "com.example.adobe.entity.aircraft.CargoAircraft",
+    "aircraftName": "A338",
+    "aircraft_type": "2",
+    "enginesNumber": 4,
+    "maxSpeed": 300,
+    "maxWeight": 2400,
+    "totalPackageNumber": 200
+  }
+]

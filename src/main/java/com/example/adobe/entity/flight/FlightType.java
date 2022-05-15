@@ -1,4 +1,4 @@
-package com.example.adobe.domain.flight;
+package com.example.adobe.entity.flight;
 
 public enum FlightType {
     COMMERCIAL_FLIGHT("Commercial_flight"), CARGO_FLIGHT("Cargo_Flight");

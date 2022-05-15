@@ -1,11 +1,11 @@
-package com.example.adobe.domain.aircraft;
+package com.example.adobe.entity.aircraft;
 
-public enum AircraftType {
-    BOEING_747("Boeing_747"), BOEING_748("BOEING_748"),
+public enum AircraftName {
+    BOEING_747("BOEING_747"), BOEING_748("BOEING_748"),
     AIRBUS_330("A330"), AIRBUS_338("A338");
     private final String aircraftName;
 
-    AircraftType(String aircraftName) {
+    AircraftName(String aircraftName) {
         this.aircraftName = aircraftName;
     }
 
