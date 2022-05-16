@@ -48,8 +48,7 @@ public class Main implements CommandLineRunner {
                 .build();
 
 
-        testCustomer.getBookedFlights().add(flight);
-
         repository.save(testCustomer);
+        flightRepository.save(flight);
     }
 }
