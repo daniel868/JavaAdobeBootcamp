@@ -34,5 +34,19 @@
     "maxSpeed": 300,
     "maxWeight": 2400,
     "totalPackageNumber": 200
+  },
+  {
+    "_class": "com.example.adobe.entity.people.Customer",
+    "name": "Customer1",
+    "surname": "Surname",
+    "emailAddress": "customer@gmail.com",
+    "phoneNumber": "074132131"
+  },
+  {
+    "_class": "com.example.adobe.entity.people.Customer",
+    "name": "Customer2",
+    "surname": "Surname2",
+    "emailAddress": "customer_mail@gmail.com",
+    "phoneNumber": "074132131"
   }
 ]

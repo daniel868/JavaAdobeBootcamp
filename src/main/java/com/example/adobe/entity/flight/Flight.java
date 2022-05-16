@@ -1,5 +1,6 @@
 package com.example.adobe.entity.flight;
 
+import com.example.adobe.entity.aircraft.Aircraft;
 import com.example.adobe.entity.people.Customer;
 import com.example.adobe.entity.people.People;
 import lombok.Builder;
@@ -28,6 +29,10 @@ public class Flight {
     private Date landingDateTime;
     private String fromLocation;
     private String toLocation;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "aircraft_id")
+    private Aircraft aircraft;
 
 
     @ManyToMany(cascade = CascadeType.ALL)

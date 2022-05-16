@@ -30,15 +30,7 @@ public class Main implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
-
-        Customer testCustomer = Customer.builder()
-                .name("Customer1")
-                .surname("Surname")
-                .emailAddress("customer@gmail.com")
-                .phoneNumber("074132131")
-                .build();
-
+    public void run(String... args) {
         Flight flight = Flight.builder()
                 .flightType(FlightType.COMMERCIAL_FLIGHT.getFlightType())
                 .departureDateTime(Date.from(Instant.now().plus(2, ChronoUnit.DAYS)))
@@ -47,8 +39,6 @@ public class Main implements CommandLineRunner {
                 .toLocation("NYC")
                 .build();
 
-
-        repository.save(testCustomer);
         flightRepository.save(flight);
     }
 }

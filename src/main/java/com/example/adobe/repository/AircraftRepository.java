@@ -9,12 +9,10 @@ import java.util.List;
 
 @Repository
 public interface AircraftRepository extends JpaRepository<Aircraft, Long> {
-
     @Query(value = "Select * from aircraft Where aircraft_type = 1", nativeQuery = true)
     public List<Aircraft> getCommercialAircraft();
 
     @Query(value = "Select * from aircraft Where aircraft_type = 2", nativeQuery = true)
     public List<Aircraft> getCargoAircraft();
-
 
 }
