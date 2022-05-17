@@ -21,7 +21,6 @@ public class Customer extends People {
     @SequenceGenerator(name = "customer_key_sequence_generator", sequenceName = "customer_sequence", allocationSize = 1)
     public Long id;
 
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "customer_flight",

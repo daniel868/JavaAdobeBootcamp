@@ -96,6 +96,14 @@
         </dependency>
 
 
+        <!--remote dependencies-->
+        <dependency>
+            <groupId>com.konghq</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>3.13.8</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
