@@ -5,7 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @SpringBootTest
 class RemoteClientTest {
@@ -17,8 +18,12 @@ class RemoteClientTest {
     }
 
     @Test
-    void shouldFetchData() {
-        HttpResponse<ResponseApi> expected = remoteClient.fetchPlane();
-        assertThat(expected).isNotNull();
+    void shouldFetchData() throws ExecutionException, InterruptedException {
+
+    }
+
+    @Test
+    void fetchWithPlane() throws ExecutionException, InterruptedException {
+
     }
 }

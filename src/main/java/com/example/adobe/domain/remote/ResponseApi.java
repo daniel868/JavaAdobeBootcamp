@@ -3,8 +3,10 @@ package com.example.adobe.domain.remote;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
+import java.util.List;
+
 @AllArgsConstructor
+@Data
 public class ResponseApi {
-    private final ResponsePojo response;
+    private final List<ResponseDetails> response;
 }

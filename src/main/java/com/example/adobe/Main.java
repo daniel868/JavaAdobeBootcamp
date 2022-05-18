@@ -2,20 +2,20 @@ package com.example.adobe;
 
 import com.example.adobe.entity.flight.Flight;
 import com.example.adobe.entity.flight.FlightType;
-import com.example.adobe.entity.people.Customer;
-import com.example.adobe.entity.people.People;
 import com.example.adobe.repository.CustomerRepository;
 import com.example.adobe.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.sql.Date;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 @SpringBootApplication
+@EnableAsync
 public class Main implements CommandLineRunner {
 
     @Autowired
