@@ -1,9 +1,8 @@
 package com.example.adobe.controller;
 
-import com.example.adobe.domain.remote.RemoteService;
-import com.example.adobe.domain.remote.ResponseApi;
-import com.example.adobe.domain.remote.ResponseDetails;
-import org.modelmapper.ModelMapper;
+import com.example.adobe.domain.date_time.DateTimeService;
+import com.example.adobe.domain.date_time.DateTimeResponse;
+import com.example.adobe.domain.date_time.DateTimeDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/remote")
 @RestController
 public class RemoteController {
-    private final RemoteService remoteClient;
+    private final DateTimeService remoteClient;
 
-    public RemoteController(RemoteService remoteClient) {
+    public RemoteController(DateTimeService remoteClient) {
         this.remoteClient = remoteClient;
     }
 
@@ -25,9 +24,9 @@ public class RemoteController {
     }
 
     @GetMapping("/get-pojo")
-    public ResponseDetails getResponsePojo() throws Exception {
+    public DateTimeDetails getResponsePojo() throws Exception {
 
-        ResponseApi responseApi = remoteClient.fetchData()
+        DateTimeResponse responseApi = remoteClient.getRemoteDateTimeFlight("CDG", "FCO")
                 .get()
                 .getBody();
 

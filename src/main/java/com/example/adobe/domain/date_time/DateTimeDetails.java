@@ -1,11 +1,11 @@
-package com.example.adobe.domain.remote;
+package com.example.adobe.domain.date_time;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ResponseDetails {
+public class DateTimeDetails {
     private final String airline_iata;
     private final String airline_icao;
     private final String dep_iata;
