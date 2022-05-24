@@ -13,6 +13,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.repository.init.Jackson2RepositoryPopulatorFactoryBean;
 
+import java.text.SimpleDateFormat;
+
 @Configuration
 public class Config {
     @Bean
@@ -29,10 +31,14 @@ public class Config {
     }
 
     @Bean
+    public SimpleDateFormat provideSimpleDateFormat(){
+        return new SimpleDateFormat("yyyy-MM-dd hh:mm");
+    }
+    @Bean
     public AmazonS3 provideS3Credentials() {
         AWSCredentials awsCredentials = new BasicAWSCredentials(
-                "AKIA43WMW2IG3QZ6VMOO",
-                "J3Z/3dUfr7Gpg5zbJgzJDDM/njREPJ2E3pgh03WI"
+                "AKIA43WMW2IGU7UNQDU7",
+                "XkXeoqatV8M+dXFGgtbh4MaApRkp5MPQtIWHY6l6"
         );
         return AmazonS3ClientBuilder
                 .standard()

@@ -6,9 +6,6 @@ import com.example.adobe.domain.date_time.DateTimeService;
 import com.example.adobe.exception.FlightNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-
 @Service
 public class FlightDateTimeServiceImpl implements FlightDateTimeService {
 
@@ -17,7 +14,6 @@ public class FlightDateTimeServiceImpl implements FlightDateTimeService {
     public FlightDateTimeServiceImpl(DateTimeService dateTimeService) {
         this.dateTimeService = dateTimeService;
     }
-
 
     @Override
     public DateTimeDetails getFlightDateTime(String fromLocation, String toLocation) {
@@ -30,7 +26,7 @@ public class FlightDateTimeServiceImpl implements FlightDateTimeService {
             return dateTimeResponse.getResponse()
                     .stream()
                     .findFirst()
-                    .orElseThrow(() -> new FlightNotFoundException(""));
+                    .orElseThrow(() -> new FlightNotFoundException("Could not find a flight with your requirements"));
 
         } catch (Exception e) {
             e.printStackTrace();

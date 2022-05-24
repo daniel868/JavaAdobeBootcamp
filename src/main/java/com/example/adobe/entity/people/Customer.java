@@ -24,8 +24,8 @@ public class Customer extends People {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "customer_flight",
-            joinColumns = @JoinColumn(name = "flight_id"),
-            inverseJoinColumns = @JoinColumn(name = "customer_id")
+            joinColumns = @JoinColumn(name = "customer_id"),
+            inverseJoinColumns = @JoinColumn(name = "flight_id")
     )
     private Set<Flight> bookedFlights = new HashSet<>();
 
