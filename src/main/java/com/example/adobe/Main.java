@@ -2,6 +2,7 @@ package com.example.adobe;
 
 import com.example.adobe.entity.flight.Flight;
 import com.example.adobe.entity.flight.FlightType;
+import com.example.adobe.repository.AircraftRepository;
 import com.example.adobe.repository.CustomerRepository;
 import com.example.adobe.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,6 @@ import java.time.temporal.ChronoUnit;
 @EnableAsync
 public class Main implements CommandLineRunner {
 
-    @Autowired
-    CustomerRepository repository;
 
     @Autowired
     FlightRepository flightRepository;
@@ -38,6 +37,7 @@ public class Main implements CommandLineRunner {
                 .fromLocation("OTP")
                 .toLocation("NYC")
                 .build();
+
 
         flightRepository.save(flight);
     }

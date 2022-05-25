@@ -26,7 +26,7 @@
 
     <dependencies>
 
-       <!--Lombok-->
+        <!--Lombok-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -87,7 +87,6 @@
         </dependency>
 
 
-
         <!-- Model Mapper dependency -->
         <dependency>
             <groupId>org.modelmapper</groupId>
@@ -102,7 +101,6 @@
             <artifactId>unirest-java</artifactId>
             <version>3.13.8</version>
         </dependency>
-
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
@@ -124,6 +122,26 @@
             <artifactId>aws-java-sdk</artifactId>
             <version>1.11.649</version>
         </dependency>
+
+
+        <!--test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.6.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
 
     </dependencies>
 

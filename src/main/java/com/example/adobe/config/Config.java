@@ -6,12 +6,16 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.example.adobe.dto.FlightDto;
+import com.example.adobe.entity.flight.Flight;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.data.repository.init.Jackson2RepositoryPopulatorFactoryBean;
+import org.springframework.ui.Model;
 
 import java.text.SimpleDateFormat;
 
@@ -27,18 +31,28 @@ public class Config {
 
     @Bean
     public ModelMapper provideModelMapper() {
-        return new ModelMapper();
+        ModelMapper modelMapper = new ModelMapper();
+        PropertyMap<Flight, FlightDto> flightProperty = new PropertyMap<Flight, FlightDto>() {
+            @Override
+            protected void configure() {
+                skip(source.getFlightType(), destination.getFlightType());
+            }
+        };
+        modelMapper.addMappings(flightProperty);
+
+        return modelMapper;
     }
 
     @Bean
-    public SimpleDateFormat provideSimpleDateFormat(){
+    public SimpleDateFormat provideSimpleDateFormat() {
         return new SimpleDateFormat("yyyy-MM-dd hh:mm");
     }
+
     @Bean
     public AmazonS3 provideS3Credentials() {
         AWSCredentials awsCredentials = new BasicAWSCredentials(
-                "AKIA43WMW2IGU7UNQDU7",
-                "XkXeoqatV8M+dXFGgtbh4MaApRkp5MPQtIWHY6l6"
+                "*",
+                "*"
         );
         return AmazonS3ClientBuilder
                 .standard()

@@ -8,17 +8,19 @@ import com.example.adobe.entity.flight.FlightType;
 import com.example.adobe.repository.AircraftRepository;
 import com.example.adobe.repository.FlightRepository;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FlightService {
     private final FlightRepository flightRepository;
     private final AircraftRepository aircraftRepository;
     private final SimpleDateFormat dateFormat;
-
     private final ModelMapper modelMapper;
 
     public FlightService(FlightRepository flightRepository, AircraftRepository aircraftRepository, SimpleDateFormat dateFormat, ModelMapper modelMapper) {
@@ -34,6 +36,12 @@ public class FlightService {
                 .orElseThrow(() -> new RuntimeException("Could not found flight with id: " + id)));
     }
 
+    public ResponseEntity<List<FlightDto>> getAllFlights() {
+        return ResponseEntity.ok(flightRepository.findAll()
+                .stream()
+                .map(flight -> modelMapper.map(flight, FlightDto.class))
+                .collect(Collectors.toList()));
+    }
 
     public void insertFlight(FlightDto flightDto) throws Exception {
         Aircraft requestedAircraft = aircraftRepository.findById(flightDto.getAircraftId())
@@ -55,5 +63,9 @@ public class FlightService {
         newFlight.setAircraft(requestedAircraft);
 
         flightRepository.save(newFlight);
+    }
+
+    public void deleteFlight(Long id) {
+        flightRepository.deleteById(id);
     }
 }

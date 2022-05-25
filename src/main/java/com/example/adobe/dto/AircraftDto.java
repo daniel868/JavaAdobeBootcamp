@@ -1,9 +1,11 @@
 package com.example.adobe.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @AllArgsConstructor
+@Builder
 @Data
 public class AircraftDto {
     private final int aircraftType;

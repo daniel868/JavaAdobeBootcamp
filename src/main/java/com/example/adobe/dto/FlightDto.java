@@ -3,15 +3,18 @@ package com.example.adobe.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class FlightDto {
-    private final Long aircraftId;
-    private final Long flightType;
-    private final String departureDateTime;
-    private final String landingDateTime;
-    private final String fromLocation;
-    private final String toLocation;
+    private Long aircraftId;
+    private Long flightType;
+
+    private String departureDateTime;
+    private String landingDateTime;
+    private String fromLocation;
+    private String toLocation;
 
 }

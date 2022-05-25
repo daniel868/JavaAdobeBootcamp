@@ -23,7 +23,6 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "flight_key_sequence_generator")
     @SequenceGenerator(name = "flight_key_sequence_generator", sequenceName = "flight_sequence", allocationSize = 1)
     private Long id;
-
     private String flightType;
     private Date departureDateTime;
     private Date landingDateTime;
