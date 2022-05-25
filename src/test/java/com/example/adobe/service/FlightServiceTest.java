@@ -1,6 +1,8 @@
 package com.example.adobe.service;
 
 import com.example.adobe.dto.FlightDto;
+import com.example.adobe.entity.aircraft.Aircraft;
+import com.example.adobe.entity.aircraft.CommercialAircraft;
 import com.example.adobe.entity.flight.Flight;
 import com.example.adobe.entity.flight.FlightType;
 import com.example.adobe.repository.AircraftRepository;
@@ -99,5 +101,37 @@ public class FlightServiceTest {
 
         verify(flightRepository, times(1)).findAll();
         verifyNoMoreInteractions(flightRepository);
+    }
+
+    @Test
+    public void test_insertFlight_success() throws Exception {
+        //given
+        FlightDto mockFlightDto = FlightDto.builder()
+                .flightType(1L)
+                .aircraftId(1L)
+                .departureDateTime("2022-03-15 10:12")
+                .landingDateTime("2022-03-15 10:12")
+                .fromLocation("OTP")
+                .toLocation("CDG")
+                .build();
+
+        Aircraft mockAircraft = CommercialAircraft.builder()
+                .aircraftName("Some name")
+                .maxSpeed(250.42f)
+                .passengerSeats(250)
+                .build();
+
+        Mockito.when(aircraftRepository.findById(1L)).thenReturn(
+                Optional.ofNullable(mockAircraft));
+
+        //when
+        underTest.insertFlight(mockFlightDto);
+
+        //then
+        verify(aircraftRepository, times(1)).findById(1L);
+        verify(flightRepository,times(1)).save(any());
+
+        verifyNoMoreInteractions(aircraftRepository);
+        verifyNoMoreInteractions(aircraftRepository);
     }
 }

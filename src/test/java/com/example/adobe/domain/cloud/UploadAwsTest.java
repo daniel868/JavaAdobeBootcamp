@@ -1,4 +1,4 @@
-package com.example.adobe.domain;
+package com.example.adobe.domain.cloud;
 
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 import com.example.adobe.domain.cloud.UploadAws;

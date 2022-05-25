@@ -8,7 +8,6 @@ import com.example.adobe.entity.flight.FlightType;
 import com.example.adobe.repository.AircraftRepository;
 import com.example.adobe.repository.FlightRepository;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
