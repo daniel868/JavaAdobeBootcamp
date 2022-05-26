@@ -65,7 +65,7 @@ public class AircraftServiceTest {
                 .thenReturn(new ArrayList<>());
 
         //when
-        List<Aircraft> result = underTest.getCommercialAircraft();
+        List<AircraftDto> result = underTest.getCommercialAircraft();
 
         //then
         assertThat(result).isNotNull();
@@ -82,7 +82,7 @@ public class AircraftServiceTest {
                 .thenReturn(new ArrayList<>());
 
         //when
-        List<Aircraft> expected = underTest.getCargoAircraft();
+        List<AircraftDto> expected = underTest.getCargoAircraft();
 
         //then
         assertThat(expected).isNotNull();

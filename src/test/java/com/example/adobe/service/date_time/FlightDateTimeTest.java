@@ -43,7 +43,7 @@ public class FlightDateTimeTest {
         HttpResponse<DateTimeResponse> mockResponse = Mockito.mock(HttpResponse.class);
 
         Mockito.when(mockResponse.getBody()).thenReturn(mockDateTimeResponse);
-        Mockito.when(mockResponse.getStatus()).thenReturn(200);
+
 
         Mockito.when(dateTimeService.getRemoteDateTimeFlight("OTP", "CDG"))
                 .thenReturn(CompletableFuture.completedFuture(mockResponse));
@@ -63,7 +63,6 @@ public class FlightDateTimeTest {
         HttpResponse<DateTimeResponse> mockResponse = Mockito.mock(HttpResponse.class);
 
         Mockito.when(mockResponse.getBody()).thenReturn(null);
-        Mockito.when(mockResponse.getStatus()).thenReturn(200);
 
         Mockito.when(dateTimeService.getRemoteDateTimeFlight("OTP", "CDG"))
                 .thenReturn(CompletableFuture.completedFuture(mockResponse));
@@ -72,6 +71,5 @@ public class FlightDateTimeTest {
         DateTimeDetails expected = underTest.getFlightDateTime("OTP", "CDG");
 
         //then
-        assertThat(expected).isNotNull();
     }
 }

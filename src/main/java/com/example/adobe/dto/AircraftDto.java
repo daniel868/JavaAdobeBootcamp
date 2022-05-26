@@ -3,15 +3,17 @@ package com.example.adobe.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
 public class AircraftDto {
-    private final int aircraftType;
-    private final String aircraftName;
-    private final int enginesNumber;
-    private final float maxSpeed;
+    private int aircraftType;
+    private String aircraftName;
+    private int enginesNumber;
+    private float maxSpeed;
 
     private float maxWeight;
     private int totalPackageNumber;

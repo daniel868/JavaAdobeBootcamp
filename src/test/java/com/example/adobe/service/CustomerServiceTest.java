@@ -1,6 +1,5 @@
 package com.example.adobe.service;
 
-import com.amazonaws.services.alexaforbusiness.model.TemperatureUnit;
 import com.example.adobe.domain.date_time.DateTimeDetails;
 import com.example.adobe.dto.CustomerDto;
 import com.example.adobe.dto.CustomerFlightDto;
@@ -19,18 +18,15 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 
-import static java.util.Arrays.asList;
-import static org.mockito.Mockito.*;
-
 import java.text.SimpleDateFormat;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
+import static java.util.Arrays.asList;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerServiceTest {

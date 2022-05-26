@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AircraftService {
@@ -21,12 +22,18 @@ public class AircraftService {
         this.modelMapper = modelMapper;
     }
 
-    public List<Aircraft> getCommercialAircraft() {
-        return repository.getCommercialAircraft();
+    public List<AircraftDto> getCommercialAircraft() {
+        return repository.getCommercialAircraft()
+                .stream()
+                .map(aircraft -> modelMapper.map(aircraft, AircraftDto.class))
+                .collect(Collectors.toList());
     }
 
-    public List<Aircraft> getCargoAircraft() {
-        return repository.getCargoAircraft();
+    public List<AircraftDto> getCargoAircraft() {
+        return repository.getCargoAircraft()
+                .stream()
+                .map(aircraft -> modelMapper.map(aircraft, AircraftDto.class))
+                .collect(Collectors.toList());
     }
 
     public ResponseEntity<Aircraft> insertAircraft(AircraftDto aircraftDto) {

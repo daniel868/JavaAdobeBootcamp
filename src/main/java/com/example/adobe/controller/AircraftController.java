@@ -19,12 +19,12 @@ public class AircraftController {
     }
 
     @GetMapping("/commercial-aircraft")
-    public List<Aircraft> getCommercialAircraft() {
+    public List<AircraftDto> getCommercialAircraft() {
         return aircraftService.getCommercialAircraft();
     }
 
     @GetMapping("/cargo-aircraft")
-    public List<Aircraft> getCargoAircraft() {
+    public List<AircraftDto> getCargoAircraft() {
         return aircraftService.getCargoAircraft();
     }
 
