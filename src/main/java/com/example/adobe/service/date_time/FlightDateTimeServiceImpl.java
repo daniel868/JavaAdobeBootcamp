@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FlightDateTimeServiceImpl implements FlightDateTimeService {
-
     private final DateTimeService dateTimeService;
 
     public FlightDateTimeServiceImpl(DateTimeService dateTimeService) {

@@ -17,7 +17,6 @@ public class DateTimeClient implements DateTimeService {
         this.connector = connector;
     }
 
-
     @Async
     @Override
     public CompletableFuture<HttpResponse<DateTimeResponse>> getRemoteDateTimeFlight(String fromLocation, String toLocation) {
