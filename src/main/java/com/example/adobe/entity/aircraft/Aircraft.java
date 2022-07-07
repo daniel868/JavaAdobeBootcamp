@@ -12,13 +12,16 @@ import java.util.Set;
 @Entity
 @DiscriminatorColumn(name = "aircraft_type", discriminatorType = DiscriminatorType.INTEGER)
 @Data
+@NamedQueries(value = {
+        @NamedQuery(name = "Aircraft.fetchByName", query = "SELECT a From Aircraft a WHERE a.aircraftName=:name"),
+        @NamedQuery(name = "Aircraft.countValue", query = "SELECT COUNT(a.maxSpeed) FROM Aircraft  a WHERE a.maxSpeed>100")
+})
 public abstract class Aircraft {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "aircraft_key_sequence_generator")
     @SequenceGenerator(name = "aircraft_key_sequence_generator", sequenceName = "aircraft_sequence", allocationSize = 1)
     private Long id;
-
     protected String aircraftName;
     protected int enginesNumber;
     protected float maxSpeed;
